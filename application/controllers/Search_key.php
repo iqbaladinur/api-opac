@@ -46,7 +46,8 @@ class Search_key extends REST_Controller{
 			}
 
 			if (empty($data)) {
-				$response = array('status' => 'ok', 'data' => 'NOT FOUND');
+				$data[0]  = array('judul' => 'Not Found!' , 'des' => 'Not Found', 'lokasi' => 'Not Found');
+				$response = array('status' => 'not', 'data' => $data);
 			}else{
 				$response = array(
 					'status' => 'ok',
