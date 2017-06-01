@@ -39,9 +39,9 @@ class Search_key extends REST_Controller{
 				$ket 		 = strip_tags($value->find('span', 0)->innertext);
 				$lokasi 	 = str_replace('&nbsp;&gt;&nbsp;', '>', strip_tags($value->find('small', 0)->innertext));
 				$data[] 	 = array(
-					 'judul' => $judul,
-					 'des'   => $ket,
-					 'lokasi'=> $lokasi 
+					 'judul' => utf8_encode($judul),
+					 'des'   => utf8_encode($ket),
+					 'lokasi'=> utf8_encode($lokasi) 
 				);
 			}
 
