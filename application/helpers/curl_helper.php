@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-function postJsondata($url,$data){
+function postFile($url,$data){
 	$opts = array(
 	    'http' => array (
     	'method' => 'POST',
@@ -11,8 +11,7 @@ function postJsondata($url,$data){
 	);
 	$context = stream_context_create($opts);
 	$string=file_get_contents($url,false,$context);
-	$result=json_decode($string);
-	return $result;
+	return $string;
 }
 
 function getcURL($url){
@@ -31,6 +30,8 @@ function postcURL($url, $data = array()){
 	$data=http_build_query($data);
 	$ch=curl_init();
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	curl_setopt($ch, CURLOPT_POSTREDIR, 3);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
