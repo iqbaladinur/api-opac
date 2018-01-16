@@ -25,8 +25,8 @@ class Post extends REST_Controller{
 		$this->load->helper('curl');
 		$this->load->helper('htmldom');
 		$this->load->library('composer');
-		header("Access-Control-Allow-Origin: *");
-		header("Content-Type:application/json");
+		header('Access-Control-Allow-Origin: *');
+    	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 	}
 
 	public function index_get(){
