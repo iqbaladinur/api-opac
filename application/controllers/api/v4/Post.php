@@ -27,7 +27,7 @@ class Post extends REST_Controller{
 		$this->load->library('composer');
 		header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 		header('Content-Type: application/json');
-		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Origin: https://hepicar.com');
 		header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 	}
 
