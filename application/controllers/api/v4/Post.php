@@ -73,6 +73,6 @@ class Post extends REST_Controller{
 		$json = file_get_contents('php://input');
 		$headers = array('Accept' => 'application/json');
 		$response = Requests::post($devUrl, $headers, $json);
-		print_r($response);
+		print_r($response->body);
 	}
 }
