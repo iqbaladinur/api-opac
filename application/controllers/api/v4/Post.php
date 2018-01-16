@@ -72,7 +72,7 @@ class Post extends REST_Controller{
 		$prodUrl = 'http://139.59.123.6:3000/registration';
 		$json = file_get_contents('php://input');
 		$headers = array('Content-Type' => 'application/json');
-		$response = Requests::post($devUrl, $headers, $json);
+		$response = Requests::post($prodUrl, $headers, $json);
 		print_r($response->body);
 	}
 }
