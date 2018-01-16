@@ -69,6 +69,7 @@ class Post extends REST_Controller{
 	public function data_post()
 	{
 		header("Access-Control-Allow-Origin: *");
+		header("Content-Type:application/json");
 		$devUrl = 'http://139.59.123.6:3000/registration';
 		$prodUrl = 'http://139.59.123.6:3000/registration';
 		$json = file_get_contents('php://input');
