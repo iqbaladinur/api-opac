@@ -75,4 +75,13 @@ class Post extends REST_Controller{
 		$response = Requests::post($prodUrl, $headers, $json);
 		print_r($response->body);
 	}
+
+	public function spesialities_get()
+	{
+		$devUrl = 'http://139.59.123.6:3000/specialties';
+		$prodUrl = 'http://128.199.190.44:3000/specialties';
+		$headers = array('Content-Type' => 'application/json');
+		$response= Requests::get($prodUrl, $headers);
+		print_r($response);
+	}
 }
