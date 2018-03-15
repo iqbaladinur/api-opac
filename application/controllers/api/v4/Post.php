@@ -82,6 +82,6 @@ class Post extends REST_Controller{
 		$prodUrl = 'http://128.199.190.44:3000/specialties';
 		$headers = array('Content-Type' => 'application/json');
 		$response= Requests::get($prodUrl, $headers);
-		print_r($response);
+		print_r($response->body);
 	}
 }
