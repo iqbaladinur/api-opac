@@ -33,7 +33,7 @@ class Search_key extends REST_Controller{
 
 			$key_word = urldecode($key_word);
 			$data_to_post= array('q' => $key_word);
-			$response = Requests::post('http://opac.uin-suka.ac.id', array(), $data_to_post);
+			$response = Requests::post('https://opac.uin-suka.ac.id', array(), $data_to_post);
 			
 			$html_object = str_get_html($response->body);
 			$content 	 = $html_object->find('div[id=c] div[lang]');
